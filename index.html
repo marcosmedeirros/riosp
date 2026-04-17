@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IV Jornada Rio-São Paulo de Botânica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2e7d68;
+  --green-dark:#236057;
+  --green-mid:#327060;
+  --yellow:#b8970f;
+  --yellow-btn:#c9a820;
+  --yellow-nav:#cdb84a;
+  --yellow-light:#d4c060;
+  --yellow-bg-section:#c9b645;
+  --white:#ffffff;
+  --text:#1a1a1a;
+  --ff:'Nunito',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);color:var(--text);background:var(--white);line-height:1.6;font-size:16px}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  background:var(--yellow-nav);
+  height:52px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.5rem;
+}
+.nav-logo svg{width:28px;height:34px;display:block}
+.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.72rem;font-weight:700;
+  color:var(--text);letter-spacing:.07em;text-transform:uppercase;
+  transition:opacity .2s;white-space:nowrap;
+}
+.nav-links a:hover{opacity:.65}
+.nav-idioma{
+  display:flex;align-items:center;gap:.25rem;
+  font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  cursor:pointer;color:var(--text);
+}
+.nav-btn{
+  background:var(--yellow-btn);color:var(--text);
+  padding:.38rem 1rem;border-radius:4px;
+  font-size:.72rem;font-weight:700;text-decoration:none;
+  border:1.5px solid rgba(0,0,0,.2);transition:background .2s;white-space:nowrap;
+}
+.nav-btn:hover{background:var(--yellow-light)}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:20px;height:2px;background:var(--text);display:block;transition:all .3s}
+
+/* ===== HERO ===== */
+#home{
+  padding-top:52px;
+  background:var(--green);
+  min-height:88vh;
+  display:flex;align-items:center;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;padding:2.5rem 2rem;gap:1rem;
+}
+.hero-left{position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.hero-date-label{
+  color:var(--white);font-size:.9rem;font-weight:800;
+  letter-spacing:.05em;margin-bottom:.9rem;
+}
+.hero-inscBtn{
+  display:inline-block;
+  background:var(--yellow-btn);color:var(--text);
+  padding:.42rem 1.1rem;border-radius:4px;
+  font-size:.82rem;font-weight:700;text-decoration:none;
+  border:1.5px solid rgba(0,0,0,.25);
+  transition:background .2s;margin-bottom:1.5rem;
+}
+.hero-inscBtn:hover{background:var(--yellow-light)}
+.plant-wrap{width:100%;max-width:310px;margin:0 auto}
+.plant-wrap svg{width:100%;height:auto}
+
+.hero-right{text-align:center}
+.hero-title{
+  font-family:var(--ff);
+  font-size:clamp(2.4rem,4.5vw,3.8rem);
+  font-weight:900;color:var(--yellow-btn);
+  line-height:1.08;margin-bottom:1.1rem;
+  letter-spacing:-.01em;
+}
+.hero-divider{border:none;border-top:1px solid rgba(255,255,255,.35);margin:.9rem auto;width:75%}
+.hero-sub{
+  font-size:clamp(1.3rem,2.8vw,2rem);
+  color:var(--white);font-weight:400;line-height:1.3;margin-bottom:1.8rem;
+}
+.hero-sub em{font-style:italic;font-weight:700}
+.hero-eventinfo{color:var(--white);line-height:2;font-size:.95rem}
+.hero-eventinfo strong{font-weight:800}
+
+/* ===== COMMON ===== */
+section.green-sec{background:var(--green);padding:4rem 2rem}
+section.yellow-sec{padding:3.5rem 2rem}
+.sec-inner{max-width:1100px;margin:0 auto}
+
+/* ===== SOBRE ===== */
+.sobre-tag{color:var(--yellow-btn);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.sobre-title{color:var(--white);font-size:1.9rem;font-weight:800;margin-bottom:2.5rem}
+.sobre-layout{display:grid;grid-template-columns:180px 1fr;gap:3rem;align-items:start}
+.sobre-plant svg{width:100%;max-width:160px;opacity:.9}
+.sobre-text p{color:var(--white);font-size:.92rem;line-height:1.85;margin-bottom:.85rem;text-align:justify}
+.sobre-text a{color:#a8dfc9}
+.sobre-text strong{font-weight:800}
+
+/* schedule */
+.sched-title{color:var(--white);font-size:1rem;font-weight:700;margin:2.5rem 0 1rem}
+.sched-wrap{overflow-x:auto;border-radius:8px}
+.sched-table{width:100%;border-collapse:collapse;background:#fff;font-size:.76rem;min-width:600px}
+.sched-table th{background:#ddd;padding:.55rem .6rem;text-align:center;font-weight:800;font-size:.8rem;border:1px solid #bbb}
+.sched-table td{border:1px solid #ccc;vertical-align:top;padding:.35rem .45rem;line-height:1.35}
+.sched-table .tc{background:#e8e8e8;font-weight:700;text-align:center;color:#333;white-space:nowrap;font-size:.74rem}
+.c-blue{background:#42acd4;color:#000}
+.c-yellow{background:#f5e825;color:#000}
+.c-green{background:#4caf50;color:#000}
+.c-purple{background:#9c5fb5;color:#fff}
+.c-orange{background:#f57c20;color:#000}
+.c-pink{background:#e040c8;color:#000}
+.c-gray{background:#c0c0c0;color:#333;text-align:center;font-style:italic;font-size:.72rem}
+.sched-table td strong{font-weight:800}
+.sched-table td small{font-size:.7rem;opacity:.8}
+
+/* ===== LOCAL ===== */
+.local-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3rem}
+.local-address{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.local-address svg{width:28px;height:28px;fill:var(--white);flex-shrink:0;margin-top:2px}
+.local-address p{color:var(--white);font-size:.95rem;line-height:1.7}
+.local-address strong{font-weight:800}
+.btn-share{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1.5px solid rgba(255,255,255,.7);color:var(--white);
+  padding:.45rem 1.2rem;border-radius:4px;
+  font-size:.82rem;font-weight:700;text-decoration:none;
+  background:transparent;cursor:pointer;transition:background .2s;
+}
+.btn-share:hover{background:rgba(255,255,255,.1)}
+.local-text{color:var(--white);font-size:.88rem;line-height:1.8;text-align:justify}
+
+/* ===== PROGRAMAÇÃO BANNER ===== */
+.prog-banner{
+  background:linear-gradient(110deg,#c5b340 0%,#dece6a 55%,#ede9c0 100%);
+  padding:3.5rem 2rem;
+}
+.prog-banner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.prog-banner-inner h2{font-size:2.6rem;font-weight:900;color:var(--text);margin-bottom:.6rem}
+.prog-banner-inner p{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:1.2rem}
+.btn-prog{display:inline-block;background:var(--green);color:var(--white);padding:.6rem 1.5rem;border-radius:4px;font-size:.88rem;font-weight:700;text-decoration:none;transition:background .2s}
+.btn-prog:hover{background:var(--green-dark)}
+.prog-right{text-align:center}
+.prog-illus-wrap{max-width:260px;margin:0 auto}
+
+/* ===== PROGRAMAÇÃO SECTION ===== */
+#programacao{background:var(--green);padding:4rem 2rem}
+#programacao h2{color:var(--white);font-size:2rem;font-weight:900;text-align:center;margin-bottom:2rem}
+.prog-tabs-wrap{max-width:800px;margin:0 auto}
+.prog-type-tabs{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:.75rem}
+.prog-type-tab{
+  background:none;border:none;color:rgba(255,255,255,.6);
+  font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;padding-bottom:.5rem;border-bottom:2px solid transparent;transition:all .2s;
+  font-family:var(--ff);
+}
+.prog-type-tab.active{color:var(--white);border-bottom-color:var(--yellow-btn)}
+.day-tabs{display:flex;margin-bottom:0}
+.day-tab{
+  background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.7);
+  font-size:.82rem;font-weight:700;padding:.6rem 1.5rem;cursor:pointer;
+  transition:all .2s;font-family:var(--ff);border-radius:4px 4px 0 0;margin-right:2px;
+}
+.day-tab.active{background:var(--white);color:var(--text)}
+.prog-panel{background:var(--white);border-radius:0 4px 4px 4px;padding:1.5rem;display:none}
+.prog-panel.active{display:block}
+.room-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid #eee}
+.room-chip{
+  background:none;border:1px solid #ddd;border-radius:4px;
+  font-size:.72rem;font-weight:600;padding:.2rem .6rem;cursor:pointer;
+  transition:all .2s;color:#555;font-family:var(--ff);
+}
+.room-chip.active{background:var(--green-dark);color:#fff;border-color:var(--green-dark)}
+.prog-activity{display:flex;gap:1rem;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid #f0f0f0}
+.prog-activity:last-child{border-bottom:none}
+.prog-time{font-size:.85rem;font-weight:700;color:var(--text);min-width:40px;padding-top:2px}
+.prog-desc{flex:1}
+.prog-desc h4{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.15rem;line-height:1.4}
+.prog-desc small{font-size:.75rem;color:#666;display:flex;align-items:center;gap:.3rem}
+.prog-desc small svg{width:14px;height:14px;fill:#888;flex-shrink:0}
+.prog-detail-btn{
+  background:none;border:1px solid #ccc;border-radius:4px;
+  font-size:.72rem;font-weight:700;padding:.25rem .7rem;cursor:pointer;
+  color:#555;white-space:nowrap;font-family:var(--ff);transition:all .2s;
+}
+.prog-detail-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.room-group{margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:1px solid #f0f0f0}
+.room-group:last-child{border-bottom:none}
+.room-label{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--green-dark);background:#e8f4ef;padding:.18rem .55rem;border-radius:3px;display:inline-block;margin-bottom:.25rem}
+.curso-body{display:none;font-size:.8rem;color:#555;line-height:1.75;margin-top:.5rem;padding-top:.5rem;border-top:1px solid #eee}
+.curso-body.open{display:block}
+.toggle-curso{background:none;border:none;color:var(--yellow);font-size:.75rem;font-weight:700;cursor:pointer;padding:0;font-family:var(--ff);text-decoration:underline;display:inline-block;margin:.2rem 0}
+.curso-instructors{font-size:.75rem;color:#777;margin:.2rem 0 .35rem;font-style:italic}
+
+/* cursos grid */
+.cursos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.curso-card{background:var(--white);border-radius:6px;padding:1rem 1.1rem;border:1px solid #e0e0e0}
+.curso-card h4{font-size:.88rem;font-weight:800;margin-bottom:.2rem;line-height:1.35}
+.curso-card .curso-meta{font-size:.75rem;color:#555;margin-bottom:.25rem}
+.curso-card .curso-date{font-size:.75rem;color:#666;margin-bottom:.5rem}
+.curso-card a{font-size:.75rem;color:var(--yellow);font-weight:700;text-decoration:none}
+.curso-card a:hover{text-decoration:underline}
+.curso-card .curso-info{font-size:.75rem;color:#555;margin:.3rem 0}
+.btn-curso{
+  display:inline-block;margin-top:.5rem;
+  background:var(--yellow-btn);color:var(--text);
+  padding:.3rem .8rem;border-radius:4px;font-size:.72rem;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;font-family:var(--ff);transition:background .2s;
+}
+.btn-curso:hover{background:var(--yellow-light)}
+
+/* ===== PALESTRANTES ===== */
+#palestrantes{background:var(--green);padding:4rem 2rem;text-align:center}
+#palestrantes h2{color:var(--white);font-size:2rem;font-weight:900;margin-bottom:2.5rem}
+.speakers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;max-width:840px;margin:0 auto}
+.speaker-card{border-radius:4px;overflow:hidden;aspect-ratio:1;background:var(--green-dark);position:relative;cursor:pointer}
+.speaker-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
+.speaker-card:hover img{transform:scale(1.04)}
+.speaker-card .spk-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(10,40,30,.85));
+  padding:.5rem .7rem .6rem;
+  transform:translateY(4px);opacity:0;transition:all .25s;
+}
+.speaker-card:hover .spk-overlay{opacity:1;transform:translateY(0)}
+.spk-overlay-name{color:#fff;font-size:.78rem;font-weight:800;line-height:1.3}
+.spk-overlay-role{color:rgba(255,255,255,.7);font-size:.68rem}
+/* modal */
+.spk-modal-bg{
+  display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(3px);
+  align-items:center;justify-content:center;padding:1rem;
+}
+.spk-modal-bg.open{display:flex}
+.spk-modal{
+  background:#fff;border-radius:12px;max-width:680px;width:100%;
+  max-height:90vh;overflow-y:auto;position:relative;
+}
+.spk-modal-head{
+  display:grid;grid-template-columns:160px 1fr;gap:0;
+  border-radius:12px 12px 0 0;overflow:hidden;
+}
+.spk-modal-photo{width:160px;height:180px;object-fit:cover;object-position:top;display:block}
+.spk-modal-info{background:var(--green);padding:1.5rem 1.25rem;display:flex;flex-direction:column;justify-content:center}
+.spk-modal-name{color:var(--yellow-btn);font-size:1.1rem;font-weight:900;margin-bottom:.3rem;line-height:1.3}
+.spk-modal-role{color:rgba(255,255,255,.8);font-size:.82rem;line-height:1.5}
+.spk-modal-body{padding:1.25rem 1.5rem;font-size:.85rem;color:#444;line-height:1.8}
+.spk-modal-close{
+  position:absolute;top:.75rem;right:.9rem;
+  background:none;border:none;font-size:1.4rem;cursor:pointer;
+  color:rgba(255,255,255,.7);font-weight:700;line-height:1;
+}
+.spk-modal-close:hover{color:#fff}
+
+/* ===== SUBMISSÕES ===== */
+#submissoes{background:var(--green);padding:4rem 2rem}
+#submissoes h2{color:var(--white);font-size:2rem;font-weight:900;text-align:center;margin-bottom:3rem}
+.timeline{position:relative;max-width:680px;margin:0 auto 3rem}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,.2);transform:translateX(-50%)}
+.tl-row{display:flex;align-items:center;margin-bottom:2.2rem;position:relative}
+.tl-row:nth-child(odd){flex-direction:row-reverse}
+.tl-row:nth-child(odd) .tl-card{margin-right:2.5rem;margin-left:0;text-align:right}
+.tl-row:nth-child(even) .tl-card{margin-left:2.5rem;margin-right:0}
+.tl-icon{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:40px;height:40px;border-radius:50%;
+  background:var(--yellow-btn);display:flex;align-items:center;justify-content:center;z-index:2;
+}
+.tl-icon svg{width:18px;height:18px;fill:var(--text)}
+.tl-card{
+  background:var(--white);border-radius:8px;
+  padding:.85rem 1.1rem;width:calc(50% - 2.5rem);
+}
+.tl-card strong{display:block;font-size:.9rem;font-weight:800;margin-bottom:.2rem}
+.tl-card span{font-size:.82rem;color:#555}
+
+.sub-rules{background:rgba(255,255,255,.07);border-radius:8px;padding:2rem;max-width:820px;margin:0 auto 2.5rem;color:var(--white)}
+.sub-rules h3{font-size:1.1rem;font-weight:800;margin-bottom:1rem}
+.sub-rules p{font-size:.88rem;line-height:1.75;margin-bottom:.6rem}
+.sub-rules ul{padding-left:1.25rem;margin-bottom:.6rem}
+.sub-rules li{font-size:.85rem;line-height:1.7;margin-bottom:.2rem}
+
+/* areas tematicas */
+.areas-section{max-width:820px;margin:0 auto 2.5rem}
+.areas-title-badge{
+  display:inline-block;background:var(--yellow-btn);color:var(--white);
+  padding:.35rem 1.5rem;border-radius:4px;font-size:.9rem;font-weight:800;
+  text-align:center;margin:0 auto 1rem;
+}
+.areas-title-wrap{text-align:center;margin-bottom:.75rem}
+.areas-list{background:var(--white);border-radius:8px;overflow:hidden}
+.area-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.7rem 1.1rem;border-bottom:1px solid #eee;cursor:pointer;
+  font-size:.88rem;font-weight:600;color:var(--text);transition:background .15s;
+}
+.area-item:last-child{border-bottom:none}
+.area-item:hover{background:#f5f5f5}
+.area-item svg{width:16px;height:16px;fill:#888;flex-shrink:0;transition:transform .2s}
+.area-item.open svg{transform:rotate(180deg)}
+.area-body{display:none;padding:.5rem 1.1rem .9rem;font-size:.82rem;color:#555;border-bottom:1px solid #eee;background:#fafafa}
+.area-body.open{display:block}
+
+.sub-cta-card{background:var(--white);border-radius:8px;padding:2.5rem;text-align:center;max-width:700px;margin:0 auto}
+.sub-cta-card h3{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+.sub-cta-card p{color:#666;margin-bottom:1.25rem;font-size:.9rem}
+.sub-btns{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.btn-outline{border:1.5px solid var(--yellow-btn);color:var(--yellow-btn);padding:.5rem 1.2rem;border-radius:4px;font-size:.85rem;font-weight:700;text-decoration:none;background:transparent;transition:all .2s;cursor:pointer;font-family:var(--ff)}
+.btn-outline:hover{background:var(--yellow-btn);color:var(--text)}
+.btn-solid{background:var(--yellow-btn);color:var(--text);padding:.5rem 1.2rem;border-radius:4px;font-size:.85rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;font-family:var(--ff);transition:background .2s}
+.btn-solid:hover{background:var(--yellow-light)}
+
+/* ===== INSCRIÇÕES BANNER ===== */
+.insc-banner{background:linear-gradient(110deg,#c5b340 0%,#dece6a 55%,#ede9c0 100%);padding:3.5rem 2rem}
+.insc-banner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.insc-banner-inner h2{font-size:2.6rem;font-weight:900;color:var(--text);margin-bottom:.6rem}
+.insc-banner-inner p{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:1.2rem}
+.btn-insc{display:inline-block;background:var(--green);color:var(--white);padding:.6rem 1.5rem;border-radius:4px;font-size:.88rem;font-weight:700;text-decoration:none;transition:background .2s}
+.btn-insc:hover{background:var(--green-dark)}
+
+/* ===== INSCRIÇÕES TABELA ===== */
+#inscricoes{background:var(--green);padding:4rem 2rem}
+#inscricoes h2{color:var(--white);font-size:2rem;font-weight:900;text-align:center;margin-bottom:2.5rem}
+.insc-card{background:var(--white);border-radius:8px;overflow:hidden;max-width:900px;margin:0 auto;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.insc-steps{display:flex;align-items:center;padding:1.1rem 1rem;border-bottom:1px solid #eee;overflow-x:auto;gap:0}
+.step{display:flex;flex-direction:column;align-items:center;gap:.25rem;min-width:75px}
+.step-dot{width:36px;height:36px;border-radius:50%;background:#e0e0e0;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.step.active .step-dot{background:#e91e63;color:#fff}
+.step-lbl{font-size:.65rem;color:#999;font-weight:600;text-align:center;line-height:1.2}
+.step.active .step-lbl{color:var(--text);font-weight:700}
+.step-sep{flex:1;height:2px;background:#e0e0e0;min-width:12px;max-width:32px;margin-bottom:14px}
+.insc-body{padding:1.1rem 1.5rem}
+.insc-body h4{font-size:.88rem;font-weight:700;margin-bottom:.85rem}
+table.t-tickets{width:100%;border-collapse:collapse;font-size:.8rem}
+table.t-tickets thead tr{background:#1a2744;color:#fff}
+table.t-tickets thead th{padding:.6rem .7rem;text-align:left;font-weight:700;font-size:.78rem}
+table.t-tickets thead th:not(:first-child){text-align:center}
+table.t-tickets tbody tr{border-bottom:1px solid #eee}
+table.t-tickets tbody tr:hover{background:#fafafa}
+table.t-tickets td{padding:.55rem .7rem;font-size:.78rem}
+table.t-tickets td:not(:first-child){text-align:center}
+.pbtn{background:#b0bec5;color:#546e7a;border:none;border-radius:3px;padding:.28rem .7rem;font-size:.75rem;font-weight:700;cursor:default;white-space:nowrap}
+.pbtn.cur{background:#1976d2;color:#fff}
+.pbtn.late{background:#37474f;color:#fff}
+.insc-foot{display:flex;justify-content:flex-end;gap:.6rem;padding:.85rem 1.5rem;border-top:1px solid #eee}
+.btn-voltar{border:1px solid #ccc;background:#fff;color:#333;padding:.45rem 1.1rem;border-radius:4px;font-weight:700;font-size:.82rem;cursor:pointer;font-family:var(--ff)}
+.btn-proximo{background:#1a2744;color:#fff;border:none;padding:.45rem 1.4rem;border-radius:4px;font-weight:700;font-size:.82rem;cursor:pointer;font-family:var(--ff)}
+
+/* ===== ORGANIZADOR ===== */
+#organizador{background:var(--green);padding:4rem 2rem}
+#organizador h2{color:var(--white);font-size:1.4rem;font-weight:800;margin-bottom:1.75rem}
+#organizador h3{color:var(--white);font-size:1.05rem;font-weight:800;margin-bottom:.9rem}
+.org-cat{color:var(--white);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-top:1rem;margin-bottom:.2rem}
+.org-name{color:var(--white);font-size:.88rem;line-height:1.9}
+.org-email{color:var(--white);font-size:.88rem;margin-top:1rem}
+
+/* ===== FOOTER ===== */
+footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;font-weight:700}
+.footer-copy{color:var(--text)}
+.footer-brand{font-size:.95rem;font-weight:900;letter-spacing:.04em;color:var(--text)}
+
+/* ===== MOBILE ===== */
+@media(max-width:820px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-links.open{
+    display:flex;flex-direction:column;position:fixed;
+    top:52px;left:0;right:0;background:var(--yellow-nav);
+    padding:1.2rem 1.5rem;gap:1.1rem;border-bottom:2px solid rgba(0,0,0,.1);z-index:299;
+  }
+  .hero-inner{grid-template-columns:1fr;padding:2rem 1.5rem}
+  .hero-left{align-items:center;text-align:center}
+  .hero-right{order:-1}
+  .sobre-layout{grid-template-columns:1fr}
+  .sobre-plant{display:none}
+  .local-content{grid-template-columns:1fr}
+  .prog-banner-inner,.insc-banner-inner{grid-template-columns:1fr}
+  .prog-right{display:none}
+  .speakers-grid{grid-template-columns:repeat(2,1fr)}
+  .spk-modal-head{grid-template-columns:1fr}
+  .spk-modal-photo{width:100%;height:200px}
+  .cursos-grid{grid-template-columns:1fr}
+  .timeline::before{left:20px}
+  .tl-row,.tl-row:nth-child(odd){flex-direction:column;padding-left:50px}
+  .tl-icon{left:20px}
+  .tl-card,.tl-row:nth-child(odd) .tl-card,.tl-row:nth-child(even) .tl-card{width:100%;margin:0;text-align:left;margin-top:.6rem}
+  footer{flex-direction:column;gap:.4rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <svg viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 32C14 32 13 22 12 17C10 10 5 7 4 3C7 1 11 4 13 10C13.5 12 14 15 14 17" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M14 32C14 32 15 22 16 17C18 10 23 7 24 3C21 1 17 4 15 10C14.5 12 14 15 14 17" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M7 28C5 24 5 19 8 17C10 16 12 18 11 21C10.5 23 9 26 7 28Z" stroke="#1a1a1a" stroke-width="1.4" fill="none"/>
+      <path d="M12 30C10.5 26 11 21 14 19C14 19 14 19 14 21C14 24 13 27 12 30Z" stroke="#1a1a1a" stroke-width="1.4" fill="none"/>
+      <path d="M16 30C17.5 26 17 21 14 19C14 19 14 19 14 21C14 24 15 27 16 30Z" stroke="#1a1a1a" stroke-width="1.4" fill="none"/>
+      <path d="M21 28C23 24 23 19 20 17C18 16 16 18 17 21C17.5 23 19 26 21 28Z" stroke="#1a1a1a" stroke-width="1.4" fill="none"/>
+    </svg>
+  </div>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#inscricoes">Inscrições</a></li>
+    <li><a href="#programacao">Programação</a></li>
+    <li><a href="#submissoes">Submissões</a></li>
+    <li><a href="#local">Local do Evento</a></li>
+    <li>
+      <span class="nav-idioma">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        Idioma ▾
+      </span>
+    </li>
+    <li><a href="#inscricoes" class="nav-btn">Área restrita</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-date-label">01-04 JULHO 2026</div>
+      <a href="#inscricoes" class="hero-inscBtn">Inscreva-se</a>
+      <div class="plant-wrap">
+        <!-- Botanical plant line illustration -->
+        <svg viewBox="0 0 280 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- main stems -->
+          <path d="M140 355 C140 355 136 290 132 250 C126 200 106 172 85 138 C74 119 78 95 93 90 C108 85 118 100 124 122 C130 144 136 188 139 225" stroke="#c8a820" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M140 355 C140 355 144 290 148 250 C154 200 174 172 195 138 C208 116 210 90 196 84 C182 78 172 96 168 118 C162 142 148 186 141 225" stroke="#c8a820" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <path d="M140 300 C137 265 126 235 112 208 C104 190 102 168 114 154" stroke="#c8a820" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- left bud -->
+          <path d="M85 138 C79 122 76 104 87 94 C92 98 90 112 85 138Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M87 94 C84 80 87 66 96 61 C98 70 95 82 87 94Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M96 61 C97 50 102 42 108 40 C108 48 104 56 96 61Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <!-- right bud -->
+          <path d="M195 138 C201 122 204 104 193 94 C188 98 190 112 195 138Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M193 94 C196 80 193 66 184 61 C182 70 185 82 193 94Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M184 61 C183 50 178 42 172 40 C172 48 176 56 184 61Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <!-- middle bud -->
+          <path d="M114 154 C107 137 105 118 116 108 C121 113 119 128 114 154Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M116 108 C113 94 116 80 125 75 C127 84 124 96 116 108Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <!-- leaf cluster base -->
+          <path d="M78 328 C63 308 60 283 74 272 C84 265 96 272 94 288 C92 300 86 316 78 328Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M78 328 C75 308 78 285 89 278" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M98 335 C88 316 88 290 103 282 C112 277 120 284 116 300 C113 312 106 325 98 335Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M98 335 C100 315 106 293 116 286" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M118 340 C112 320 115 294 129 286 C138 281 147 290 142 305 C138 317 129 330 118 340Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M118 340 C122 320 128 298 138 292" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M140 342 C137 322 142 296 156 288 C165 283 173 292 168 308 C164 320 153 334 140 342Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M140 342 C144 322 150 300 160 294" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M160 338 C160 318 168 292 183 286 C192 282 198 292 192 307 C188 318 176 332 160 338Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M160 338 C164 318 172 296 182 290" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M178 328 C182 308 192 284 207 280 C215 277 220 287 213 302 C209 312 196 326 178 328Z" stroke="#c8a820" stroke-width="2" fill="none"/>
+          <path d="M178 328 C184 308 194 288 206 284" stroke="#c8a820" stroke-width="1" fill="none" opacity=".5"/>
+          <!-- extra inner detail leaves -->
+          <path d="M90 310 C88 295 94 276 104 270 C108 278 104 294 90 310Z" stroke="#c8a820" stroke-width="1.5" fill="none" opacity=".7"/>
+          <path d="M130 326 C130 310 138 290 150 285 C154 294 148 310 130 326Z" stroke="#c8a820" stroke-width="1.5" fill="none" opacity=".7"/>
+          <path d="M166 322 C168 306 178 287 190 283 C193 292 187 308 166 322Z" stroke="#c8a820" stroke-width="1.5" fill="none" opacity=".7"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-right">
+      <h1 class="hero-title">IV Jornada<br/>Rio-São Paulo<br/>de Botânica</h1>
+      <hr class="hero-divider"/>
+      <div class="hero-sub">Botânica como<br/><em>Scientia Amabilis</em></div>
+      <div class="hero-eventinfo">
+        <strong>01 a 04 de julho de 2026</strong><br/>
+        Instituto de Biociências<br/>
+        Universidade de São <strong>Paulo</strong><br/>
+        <strong>São Paulo, SP</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="green-sec">
+  <div class="sec-inner">
+    <div class="sobre-tag">01-04 JUL, PRESENCIAL</div>
+    <h2 class="sobre-title">Sobre o evento</h2>
+    <div class="sobre-layout">
+      <div class="sobre-plant">
+        <svg viewBox="0 0 160 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M80 255 C80 255 77 200 74 166 C68 120 52 98 37 72 C28 56 32 35 45 31 C58 27 65 40 70 60 C75 80 78 115 80 145" stroke="#c8a820" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M80 255 C80 255 83 200 86 166 C92 120 108 98 123 72 C134 53 134 30 122 25 C110 20 103 35 99 56 C95 77 84 113 81 145" stroke="#c8a820" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M37 72 C31 57 29 39 39 30 C43 35 41 48 37 72Z" stroke="#c8a820" stroke-width="1.6" fill="none"/>
+          <path d="M39 30 C37 18 40 7 48 3 C50 11 47 21 39 30Z" stroke="#c8a820" stroke-width="1.6" fill="none"/>
+          <path d="M123 72 C129 57 131 39 121 30 C117 35 119 48 123 72Z" stroke="#c8a820" stroke-width="1.6" fill="none"/>
+          <path d="M121 30 C123 18 120 7 112 3 C110 11 113 21 121 30Z" stroke="#c8a820" stroke-width="1.6" fill="none"/>
+          <path d="M36 235 C26 218 24 197 36 188 C44 183 52 189 50 202 C48 213 43 226 36 235Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M52 242 C44 225 45 202 58 194 C66 190 74 197 70 212 C67 222 60 234 52 242Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M70 246 C65 228 68 206 81 198 C89 194 97 202 93 217 C89 228 81 240 70 246Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M90 244 C88 227 94 205 107 198 C115 194 122 203 117 218 C114 228 104 242 90 244Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+          <path d="M108 235 C110 218 120 198 134 194 C141 191 146 201 140 215 C136 225 124 236 108 235Z" stroke="#c8a820" stroke-width="1.8" fill="none"/>
+        </svg>
+      </div>
+      <div class="sobre-text">
+        <p>A Regional Rio de Janeiro-São Paulo da Sociedade Botânica do Brasil (SBB) apresenta a <strong>IV JORNADA RJ-SP DE BOTÂNICA</strong>, evento que será realizado majoritariamente no Instituto de Biociências da Universidade de São Paulo, em São Paulo, SP, de 1 a 4 de julho de 2026.</p>
+        <p>Estão programadas palestras, mesas-redondas, minicursos teóricos e oficinas teórico-práticas, além de apresentações de painéis, sobre temas nas várias áreas da Botânica, voltados especialmente a estudantes de graduação.</p>
+        <p>O tema central da jornada é a <strong>"Botânica como Scientia amabilis"</strong>, designação cunhada por Carolus Linnaeus no século XVIII, significando-a como uma ciência adorável, que desperta interesse e afeição naqueles que se dedicam a ela, refletindo a beleza e a importância do estudo das plantas. Atualmente, é missão premente dos biólogos envidar esforços visando a minimizar a impercepção botânica (também denominada "cegueira botânica") vigente desde meados do século passado, caracterizada como a incapacidade humana de reconhecer a importância das plantas na biosfera e no nosso cotidiano, levando à dificuldade em perceber os aspectos estéticos e biológicos exclusivos das plantas e mesmo a entender as plantas como seres inferiores aos animais.</p>
+        <p>Nesse contexto, as atividades desta Jornada buscam abarcar grande amplitude de enfoques em temas relacionados às plantas, da morfologia e anatomia à sistemática, fisiologia, química, genética, evolução, filogenia, ecologia e biogeografia, sem deixar de fora aspectos da jardinagem e do paisagismo, da conservação e do ensino. Pretendemos propiciar e avaliar tanto abordagens em nível de fundamentação e de paradigmas já consolidados, quanto introduzir e discutir métodos e ferramentas modernos de estudo, com as novidades e dados gerados recentemente.</p>
+        <p>Esperamos com essas atividades ampliar a visão e o conhecimento dos alunos sobre as plantas, instigando neles um maior interesse na ciência botânica e áreas correlatas, assim como despertar o deslumbramento prazeroso ante esses seres tanto belos quanto importantes na biosfera e na vida humana. Assim a Jornada terá contribuído para aprimorar a formação acadêmica e científica dos alunos e quiçá também para seu amadurecimento como cidadãos conscientes e aptos a uma vida plena.</p>
+        <p>E-mail oficial para contato: <a href="mailto:jornada.de.botanica.rj.sp@gmail.com">jornada.de.botanica.rj.sp@gmail.com</a></p>
+
+        <div class="sched-title">Programação resumida:</div>
+        <div class="sched-wrap">
+          <table class="sched-table">
+            <thead>
+              <tr>
+                <th style="width:42px"></th>
+                <th>01/JULHO</th>
+                <th>02/JULHO</th>
+                <th>03/JULHO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tc">09h</td>
+                <td class="c-blue" rowspan="1"><small>(09h-10h)</small><br/><strong>Credenciamento</strong></td>
+                <td class="c-yellow" rowspan="3"><small>(09h-12h)</small><br/><strong>Minicursos e Oficinas</strong> 9-16</td>
+                <td class="c-yellow" rowspan="3"><small>(09h-12h)</small><br/><strong>Minicursos e Oficinas</strong> 17-25</td>
+              </tr>
+              <tr>
+                <td class="tc">10h</td>
+                <td class="c-yellow" rowspan="2"><small>(09h30-12h30)</small><br/><strong>Minicursos e Oficinas</strong> 1-8</td>
+              </tr>
+              <tr><td class="tc">11h</td></tr>
+              <tr>
+                <td class="tc">12h</td>
+                <td></td><td></td><td></td>
+              </tr>
+              <tr>
+                <td class="tc">13h</td>
+                <td class="c-gray" colspan="3">Horário reservado para almoço</td>
+              </tr>
+              <tr>
+                <td class="tc">14h</td>
+                <td>
+                  <div class="c-blue" style="padding:.25rem .4rem;margin-bottom:.2rem;font-size:.75rem"><small>(13h30-14h)</small> <strong>Credenciamento</strong></div>
+                  <div class="c-green" style="padding:.25rem .4rem;font-size:.75rem"><small>(14h-14h30)</small> <strong>Cerimônia de Abertura</strong></div>
+                </td>
+                <td class="c-pink"><small>(13h30-14h30)</small><br/><strong>Sessão de Painéis I</strong></td>
+                <td class="c-pink"><small>(13h30-14h30)</small><br/><strong>Sessão de Painéis II</strong></td>
+              </tr>
+              <tr>
+                <td class="tc">15h</td>
+                <td class="c-green"><small>(14h30-15h30)</small><br/><strong>Palestra de Abertura</strong> – Fábio Pinheiro</td>
+                <td>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+                    <div class="c-purple" style="padding:.25rem .35rem;font-size:.72rem"><small>(14h30-15h30)</small> <strong>Palestras</strong> 3 e 4</div>
+                    <div class="c-orange" style="padding:.25rem .35rem;font-size:.72rem"><small>(14h30-15h30)</small> <strong>Mesas Redondas</strong> 4-6</div>
+                  </div>
+                </td>
+                <td class="c-green"><small>(15h-16h)</small><br/><strong>Palestra de Encerramento</strong> – Ana Maria Giulietti</td>
+              </tr>
+              <tr>
+                <td class="tc">16h</td>
+                <td>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+                    <div class="c-purple" style="padding:.25rem .35rem;font-size:.72rem"><small>(15h45-17h)</small> <strong>Palestras</strong> 1 e 2</div>
+                    <div class="c-orange" style="padding:.25rem .35rem;font-size:.72rem"><small>(15h45-17h)</small> <strong>Mesas Redondas</strong> 1-3</div>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+                    <div class="c-purple" style="padding:.25rem .35rem;font-size:.72rem"><small>(15h45-17h)</small> <strong>Palestra</strong> 5</div>
+                    <div class="c-orange" style="padding:.25rem .35rem;font-size:.72rem"><small>(15h45-17h)</small> <strong>Mesas Redondas</strong> 7-8</div>
+                  </div>
+                </td>
+                <td class="c-green"><small>(16h30-17h)</small><br/><strong>Cerimônia de Encerramento</strong></td>
+              </tr>
+              <tr>
+                <td class="tc">17h</td>
+                <td class="c-orange"><small>(17h-18h)</small><br/><strong>Reunião Seção Regional</strong> RJ-SP (SBB)</td>
+                <td class="c-green"><small>(17h-18h)</small><br/><strong>Comemoração FFESP 25 anos</strong></td>
+                <td class="c-orange"><small>(17h-18h)</small><br/><strong>Coquetel</strong> de Confraternização</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCAL ===== -->
+<section id="local" class="green-sec" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div class="sec-inner">
+    <div class="local-content">
+      <div>
+        <div class="local-address">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div>
+            <p><strong>BR, SP</strong><br/>São Paulo, Butantã, 05508-090<br/>Rua do Matão, nº 277</p>
+          </div>
+        </div>
+        <button class="btn-share">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+          Compartilhar
+        </button>
+      </div>
+      <div>
+        <p class="local-text">O evento ocorrerá no Instituto de Biociências da Universidade de São Paulo (IB-USP), Campus Cidade Universitária Armando de Salles Oliveira, localizado na zona Oeste da cidade de São Paulo, nas redondezas do bairro do Butantã. O IB-USP respira História, sendo criado em 1969 enquanto formava profissionais pelo curso de História Natural da Faculdade de Filosofia, Ciências e Letras. A tradição em pesquisa é ainda mais antiga, iniciada já em 1934 por seus fundadores. O Departamento de Botânica (DB) do IB-USP é uma referência em ensino e pesquisa em nível internacional, mantendo um Programa de Pós-Graduação que detém o mais elevado conceito atribuído pela CAPES à área de Botânica do país.</p>
+        <p class="local-text" style="margin-top:.75rem">Entre os grandes espaços do DB estão o Fitotério, um espaço composto por estufas, casas de vegetação e áreas ajardinadas para uso didático e experimental, e o Herbário SPF, uma coleção fundada em 1937 e que abriga cerca de 300 mil coleções de algas, plantas vasculares e madeiras, uma importante referência internacional, ambos disponíveis para visita pelos inscritos na IV Jornada Rio-São Paulo de Botânica durante o evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAMAÇÃO BANNER ===== -->
+<div class="prog-banner">
+  <div class="prog-banner-inner">
+    <div>
+      <h2>Programação</h2>
+      <p><strong>Confira todos os detalhes da programação.</strong></p>
+      <a href="#programacao" class="btn-prog">Ver a programação</a>
+    </div>
+    <div class="prog-right">
+      <div class="prog-illus-wrap">
+        <!-- simple illustration placeholder -->
+        <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="20" width="180" height="130" rx="8" fill="#e8e4d0" stroke="#c5b340" stroke-width="2"/>
+          <rect x="45" y="35" width="100" height="12" rx="3" fill="#a8a090"/>
+          <rect x="45" y="55" width="140" height="8" rx="3" fill="#c8c0a8"/>
+          <rect x="45" y="70" width="120" height="8" rx="3" fill="#c8c0a8"/>
+          <rect x="45" y="90" width="60" height="36" rx="4" fill="#b0a880"/>
+          <rect x="115" y="90" width="70" height="36" rx="4" fill="#c5b340" opacity=".5"/>
+          <!-- person -->
+          <circle cx="210" cy="130" r="12" fill="#555"/>
+          <path d="M198 155 C198 142 222 142 222 155 L222 175 L198 175Z" fill="#3a7d8a"/>
+          <path d="M195 175 L198 155 L222 155 L225 175" fill="#2d5f6a"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROGRAMAÇÃO SECTION ===== -->
+<section id="programacao">
+  <div class="sec-inner" style="max-width:860px">
+    <h2 style="color:var(--white);font-size:2rem;font-weight:900;text-align:center;margin-bottom:2rem">Programação</h2>
+    <div class="prog-tabs-wrap">
+      <div class="prog-type-tabs">
+        <button class="prog-type-tab active" onclick="switchType('atividades',this)">Atividades</button>
+        <button class="prog-type-tab" onclick="switchType('cursos',this)">Cursos</button>
+      </div>
+
+      <!-- ===== ATIVIDADES ===== -->
+      <div id="tab-atividades" style="display:block">
+        <div class="day-tabs">
+          <button class="day-tab active" onclick="switchDay('d1',this)">01/JUL</button>
+          <button class="day-tab" onclick="switchDay('d2',this)">02/JUL</button>
+          <button class="day-tab" onclick="switchDay('d3',this)">03/JUL</button>
+        </div>
+
+        <!-- ===== DIA 1 ===== -->
+        <div id="d1" class="prog-panel active">
+          <div class="room-filter">
+            <button class="room-chip">AG Botânica</button><button class="room-chip">AG Zoologia</button>
+            <button class="room-chip">Anatomia (CD)</button><button class="room-chip">Anfiteatro IB</button>
+            <button class="room-chip">Auditório 1 CD</button><button class="room-chip">Auditório 2 CD</button>
+            <button class="room-chip">Bioquímica 2</button><button class="room-chip">Microscopia 1</button>
+            <button class="room-chip">Microscopia 2</button><button class="room-chip">Microscopia 3</button>
+            <button class="room-chip">Minas 3</button><button class="room-chip">Multimídia 1 (CD)</button>
+            <button class="room-chip">Sala 5 CD</button>
+          </div>
+          <div class="room-group"><div class="room-label">AG Botânica</div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>A contribuição de três naturalistas importantes nas explorações e estudos florísticos em São Paulo e Rio de Janeiro</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">AG Zoologia</div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>Os desafios da conservação ex situ nos Jardins Botânicos brasileiros</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Anatomia (CD)</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Da matriz à muda: coleta de sementes nativas e produção de mudas para a arborização urbana</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Blgo. Guilherme Brandão do Amaral e equipe VHB</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Anfiteatro IB</div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>Integrando conceitos de espécies e processos de especiação em plantas</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Fábio Pinheiro</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Auditório 1 CD</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Palinologia aplicada aos estudos atmosféricos, um enfoque na biodiversidade</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Claudia Barbieri Mendonça et al.</small></div><button class="prog-detail-btn">Detalhes</button></div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>A importância da rede speciesLink para a Botânica</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dora Ann Lange Canhos</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Auditório 2 CD</div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>A trajetória da fisiologia no Departamento de Botânica do IBUSP</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Gilberto Barbante Kerbauy</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Bioquímica 2</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Encáustica botânica</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Arq. Christian Bardez Castro, MSc. Katia Speck</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 1</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Identificação de Plantas Vasculares</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Otávio Luis Marques da Silva, Dr. Igor Musauer Kessous, Dra. Inês Cordeiro</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 2</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Formas de vida das plantas - parasitas, epífitas, lianas e esquisitices</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Gregório Ceccantini et al.</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 3</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Anatomia Vegetal em Perspectiva: Resgates Conceituais e Novas Interpretações</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Gladys Flavia de Albuquerque Melo de Pinna</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Minas 3</div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>Uso de IA para identificação de espécies vegetais</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Multimídia 1 (CD)</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Análises fitogeográficas no ambiente computacional R</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Yago Barros-Souza, MSc. Rafael Fernandes Barduzzi, MSc. Monique Maianne</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala 5 CD</div>
+            <div class="prog-activity"><span class="prog-time">09:30</span><div class="prog-desc"><h4>Elaboração de mapas de distribuição usando Q-GIS</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Ingrid Koch, Blga. Daniela Martins Alves, Blgo. Giovani C. Andrella</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+        </div>
+
+        <!-- ===== DIA 2 ===== -->
+        <div id="d2" class="prog-panel">
+          <div class="room-filter">
+            <button class="room-chip">AG Botânica</button><button class="room-chip">AG Zoologia</button>
+            <button class="room-chip">Anatomia (CD)</button><button class="room-chip">Auditório 1 CD</button>
+            <button class="room-chip">Auditório 2 CD</button><button class="room-chip">LIPED</button>
+            <button class="room-chip">Microscopia 1</button><button class="room-chip">Microscopia 2</button>
+            <button class="room-chip">Minas 3</button><button class="room-chip">Sala indefinida 1</button>
+            <button class="room-chip">Sala indefinida 2</button><button class="room-chip">Sala indefinida 3</button>
+          </div>
+          <div class="room-group"><div class="room-label">AG Botânica</div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>Macroalgas no Brasil: estado atual do conhecimento e perspectivas futuras</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>Diversidade e Evolução de Cactaceae no Brasil</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">AG Zoologia</div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>As múltiplas faces da esterilidade floral na adaptação das plantas</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>Pequenos herbários de São Paulo e suas atividades além da pesquisa</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Anatomia (CD)</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Montagem de exsicata com abordagem artística</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>MSc. Viviane Yuri Jono, Art. Plást. Eliane Cortazzo, Blga. Isabela Akemi Borges</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Auditório 1 CD</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Da nutrição à fotossíntese: como as bromélias epífitas sobrevivem e contribuem com a diversidade para além de seus tanques</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>MSc. Ítalo V. C. Santos, Dra. Helenice Mercies, Dr. Tháles A. C. Pereira</small></div><button class="prog-detail-btn">Detalhes</button></div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>Espécies indicadoras e endêmicas no Domínio da Caatinga com ênfase nas Cactaceae</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Daniela Cristina Zappi</small></div><button class="prog-detail-btn">Detalhes</button></div>
+            <div class="prog-activity"><span class="prog-time">15:45</span><div class="prog-desc"><h4>A idade escondida do Cerrado: arbustos e subarbustos centenários</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Cláudia Fontana</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Auditório 2 CD</div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>von Martius: A elaboração da Flora Brasiliensis e do primeiro sistema fitogeográfico do Brasil</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>José Rubens Pirani</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">LIPED</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Ensinando Botânica de forma lúdica</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Déborah Yara A C dos Santos, Dra. Fungyi Chow</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 1</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Reconhecimento prático de inflorescências</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Juliana Hanna Leite El Ottra</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 2</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Cromossomos: quem são e o que contam?</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Ana Paula de Moraes, Blga. Irene de Fátima Vieira de Moraes</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Minas 3</div>
+            <div class="prog-activity"><span class="prog-time">14:30</span><div class="prog-desc"><h4>O que a morfologia ainda nos ensina sobre as plantas: forma, função e evolução de leguminosas</h4></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 1</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Identificação de Araceae da Mata Atlântica</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Blga. Carolina Urman Vieira, Blgo. Elmar Hentz Junior, Dr. Marcos de Freitas Mortara</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 2</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Curiosidades da madeira em nosso cotidiano</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Veronica Angyalossy, Blgo. Lui Agostinho Teixeira, Blgo. Ricardo Hideaki</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 3</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>As plantas e os produtos da colmeia: mel, pólen e própolis</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Antonio Salatino, Dra. Maria Luíza F. Salatino, MSc. Leonardo Regnier</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+        </div>
+
+        <!-- ===== DIA 3 ===== -->
+        <div id="d3" class="prog-panel">
+          <div class="room-filter">
+            <button class="room-chip">Anfiteatro IB</button><button class="room-chip">Auditório 1 CD</button>
+            <button class="room-chip">LIPED</button><button class="room-chip">Microscopia 1</button>
+            <button class="room-chip">Microscopia 2</button><button class="room-chip">Sala indefinida 1</button>
+            <button class="room-chip">Sala indefinida 2</button><button class="room-chip">Sala indefinida 3</button>
+            <button class="room-chip">Sala indefinida 4</button><button class="room-chip">Sala indefinida 5</button>
+          </div>
+          <div class="room-group"><div class="room-label">Anfiteatro IB</div>
+            <div class="prog-activity"><span class="prog-time">15:00</span><div class="prog-desc"><h4>Sistemática de Angiospermas no Brasil nos últimos 60 anos</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Ana Maria Giulietti-Harley</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Auditório 1 CD</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>O poder do biólogo no paisagismo: transformando biomas em paisagens</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>MSc. Gisele de Oliveira Silva Cobra (Kaapora Paisagismo)</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">LIPED</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>A Botânica é POP: popularização do conhecimento científico por meio de experiências sensoriais e estéticas</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Joicelene Paz, Dra. Karinne Valdemarin, MSc. Viviane Jono</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 1</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Taxonomia e Evolução de Bromélias</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Igor Musauer Kessous</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Microscopia 2</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Técnicas de herbários para criptógamas: Algas, Fungos e Briófitas</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Denison F. Peralta, Dra. Adriana Gugliotta, Dra. Andréa Tucci</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 1</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Anéis de crescimento na madeira e a idade das árvores</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Gregório Ceccantini, Blgo. João Gabriel Sakayan, Blgo. Teiva Shettert</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 2</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Dinâmica dos Óleos Essenciais em Plantas Brasileiras: Extração, Atividades Biológicas e Cenários Evolutivos</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dr. Davyson de Lima Moreira</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 3</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Terrários: montagem e possibilidades didáticas</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>MSc. Elen Cristina Faht, Dra. Fabiana Curtopassi Pioker-Hara, Dra. Rosely Aparecida Liguori Imbernon</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 4</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Palinologia na prática: Aplicações ambientais da morfologia esporo-polínica</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Dra. Cynthia Fernandes Pinto da Luz et al.</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+          <div class="room-group"><div class="room-label">Sala indefinida 5</div>
+            <div class="prog-activity"><span class="prog-time">09:00</span><div class="prog-desc"><h4>Plantas Aquáticas e Palustres – Composição para cultivo em bacias</h4><small><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Arq. Christian Bardez Castro</small></div><button class="prog-detail-btn">Detalhes</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CURSOS ===== -->
+      <div id="tab-cursos" style="display:none">
+        <div class="cursos-grid" id="cursos-container"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PALESTRANTES ===== -->
+<section id="palestrantes">
+  <div class="sec-inner">
+    <h2>Palestrantes</h2>
+    <div class="speakers-grid">
+      <div class="speaker-card" onclick="openSpeaker('ana_maria')">
+        <img src="img/ana_maria.png" alt="Ana Maria Giulietti-Harley"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Ana Maria Giulietti-Harley</div>
+          <div class="spk-overlay-role">Prof. Titular UEFS / Membro ABC</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('claudia')">
+        <img src="img/claudia.png" alt="Cláudia Fontana"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Cláudia Fontana</div>
+          <div class="spk-overlay-role">Pesquisadora Pós-Doc / IPA-SP</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('daniela')">
+        <img src="img/daniela.png" alt="Daniela Cristina Zappi"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Daniela Cristina Zappi</div>
+          <div class="spk-overlay-role">Prof. Visitante / UFRB</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('dora')">
+        <img src="img/dora.png" alt="Dora Ann Lange Canhos"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Dora Ann Lange Canhos</div>
+          <div class="spk-overlay-role">Coordenadora rede speciesLink / CRIA</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('fabio')">
+        <img src="img/fabio.png" alt="Fábio Pinheiro"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Fábio Pinheiro</div>
+          <div class="spk-overlay-role">Prof. Doutor / IB-UNICAMP</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('gilberto')">
+        <img src="img/gilberto.png" alt="Gilberto Barbante Kerbauy"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">Gilberto Barbante Kerbauy</div>
+          <div class="spk-overlay-role">Prof. Titular / IB-USP</div>
+        </div>
+      </div>
+      <div class="speaker-card" onclick="openSpeaker('jose')" style="grid-column:2">
+        <img src="img/jose.png" alt="José Rubens Pirani"/>
+        <div class="spk-overlay">
+          <div class="spk-overlay-name">José Rubens Pirani</div>
+          <div class="spk-overlay-role">Prof. Titular / USP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Speaker Modal -->
+<div class="spk-modal-bg" id="spkModalBg" onclick="closeSpeakerIfBg(event)">
+  <div class="spk-modal" id="spkModal">
+    <button class="spk-modal-close" onclick="closeSpeaker()">✕</button>
+    <div class="spk-modal-head">
+      <img class="spk-modal-photo" id="spkModalPhoto" src="" alt=""/>
+      <div class="spk-modal-info">
+        <div class="spk-modal-name" id="spkModalName"></div>
+        <div class="spk-modal-role" id="spkModalRole"></div>
+      </div>
+    </div>
+    <div class="spk-modal-body" id="spkModalBody"></div>
+  </div>
+</div>
+
+<!-- ===== SUBMISSÕES ===== -->
+<section id="submissoes">
+  <div class="sec-inner">
+    <h2>Submissões</h2>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+        </div>
+        <div class="tl-card">
+          <strong>De 01/04/2026 até 30/04/2026</strong>
+          <span>Período de submissões</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        </div>
+        <div class="tl-card">
+          <strong>De 15/04/2026 até 31/05/2026</strong>
+          <span>Período de avaliações</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        </div>
+        <div class="tl-card">
+          <strong>A partir de 01/06/2026</strong>
+          <span>Liberação de aceites</span>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        </div>
+        <div class="tl-card">
+          <strong>05/06/2026</strong>
+          <span>Divulgação de resultados</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Áreas temáticas -->
+    <div class="areas-section">
+      <div class="areas-title-wrap">
+        <div class="areas-title-badge">Áreas temáticas</div>
+      </div>
+      <div class="areas-list">
+        <div class="area-item" onclick="toggleArea(this)">Biologia Reprodutiva e Palinologia <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Bioquímica, Fitoquímica e Quimiossistemática <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Botânica Estrutural <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Coleções Biológicas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Ecologia e Ecofisiologia Vegetal <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Ensino de Botânica e Atividades Extensionistas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Etnobotânica e Botânica Econômica <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Fisiologia e Biotecnologia Vegetal <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Genética e Biologia Molecular <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Angiospermas e Gimnospermas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Briófitas, Algas e Fungos <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Licófitas e Samambaias <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+      </div>
+    </div>
+
+    <!-- Faça sua submissão -->
+    <div class="sub-cta-card">
+      <h3>Faça a sua submissão</h3>
+      <p>Veja mais informações ou faça a sua submissão</p>
+      <div class="sub-btns">
+        <a href="#" class="btn-outline">Mais informações</a>
+        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-solid">Faça sua submissão</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSCRIÇÕES BANNER ===== -->
+<div class="insc-banner">
+  <div class="insc-banner-inner">
+    <div>
+      <h2>Inscrições</h2>
+      <p><strong>Veja qual a melhor modalidade de inscrição para você.</strong></p>
+      <a href="#inscricoes" class="btn-insc">Inscreva-se</a>
+    </div>
+    <div style="text-align:center">
+      <svg width="240" height="160" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- person -->
+        <circle cx="185" cy="55" r="14" fill="#555"/>
+        <path d="M170 80 C170 65 200 65 200 80 L200 110 L170 110Z" fill="#3a7d8a"/>
+        <!-- form icons -->
+        <rect x="30" y="30" width="40" height="40" rx="20" fill="#ddd"/>
+        <rect x="80" y="25" width="44" height="44" rx="22" fill="#3a7d8a"/>
+        <rect x="134" y="30" width="40" height="40" rx="20" fill="#ddd"/>
+        <rect x="40" y="90" width="20" height="20" rx="4" fill="#ddd" stroke="#aaa" stroke-width="1.5"/>
+        <rect x="88" y="88" width="22" height="22" rx="4" fill="#3a7d8a"/>
+        <path d="M92 99 l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <rect x="138" y="90" width="20" height="20" rx="4" fill="#ddd" stroke="#aaa" stroke-width="1.5"/>
+        <!-- check marks ddd -->
+        <path d="M44 99 l4 3 6-7" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M142 99 l4 3 6-7" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ===== INSCRIÇÕES TABELA ===== -->
+<section id="inscricoes">
+  <div class="sec-inner">
+    <h2>Inscreva-se</h2>
+    <div class="insc-card">
+      <!-- steps -->
+      <div class="insc-steps">
+        <div class="step active">
+          <div class="step-dot">🎫</div>
+          <div class="step-lbl">Ingresso</div>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <div class="step-dot">👤</div>
+          <div class="step-lbl">Identificação</div>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <div class="step-dot">📋</div>
+          <div class="step-lbl">Formulário</div>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <div class="step-dot">🛒</div>
+          <div class="step-lbl">Itens Adicionais</div>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <div class="step-dot">✅</div>
+          <div class="step-lbl">Finalização do carrinho</div>
+        </div>
+        <div class="step-sep"></div>
+        <div class="step">
+          <div class="step-dot">🏁</div>
+          <div class="step-lbl">Finalização</div>
+        </div>
+      </div>
+      <div class="insc-body">
+        <h4>Escolha o ingresso</h4>
+        <div style="overflow-x:auto">
+          <table class="t-tickets">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Até 10/04/2026 23:59</th>
+                <th>Até 21/06/2026 23:59</th>
+                <th>Até 01/07/2026 23:59</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Graduação – Sócio SBB</td><td><button class="pbtn">R$ 25,00</button></td><td><button class="pbtn cur">R$ 35,00</button></td><td><button class="pbtn late">R$ 50,00</button></td></tr>
+              <tr><td>Pós Graduação – Sócio SBB</td><td><button class="pbtn">R$ 40,00</button></td><td><button class="pbtn cur">R$ 70,00</button></td><td><button class="pbtn late">R$ 120,00</button></td></tr>
+              <tr><td>Profissional – Sócio SBB</td><td><button class="pbtn">R$ 65,00</button></td><td><button class="pbtn cur">R$ 105,00</button></td><td><button class="pbtn late">R$ 200,00</button></td></tr>
+              <tr><td>Técnico Nível Médio ou Aposentado – Sócio SBB</td><td><button class="pbtn">R$ 20,00</button></td><td><button class="pbtn cur">R$ 35,00</button></td><td><button class="pbtn late">R$ 60,00</button></td></tr>
+              <tr><td>Ensino Médio / IC Júnior – Sócio SBB</td><td><button class="pbtn">R$ 15,00</button></td><td><button class="pbtn cur">R$ 25,00</button></td><td><button class="pbtn late">R$ 50,00</button></td></tr>
+              <tr><td>Professor Ensino Básico – Sócio SBB</td><td><button class="pbtn">R$ 40,00</button></td><td><button class="pbtn cur">R$ 70,00</button></td><td><button class="pbtn late">R$ 140,00</button></td></tr>
+              <tr><td>Graduação – Não Associado</td><td><button class="pbtn">R$ 30,00</button></td><td><button class="pbtn cur">R$ 55,00</button></td><td><button class="pbtn late">R$ 105,00</button></td></tr>
+              <tr><td>Pós Graduação – Não Associado</td><td><button class="pbtn">R$ 60,00</button></td><td><button class="pbtn cur">R$ 105,00</button></td><td><button class="pbtn late">R$ 195,00</button></td></tr>
+              <tr><td>Profissional – Não Associado</td><td><button class="pbtn">R$ 90,00</button></td><td><button class="pbtn cur">R$ 155,00</button></td><td><button class="pbtn late">R$ 250,00</button></td></tr>
+              <tr><td>Professor de Ensino Básico – Não Associado</td><td><button class="pbtn">R$ 60,00</button></td><td><button class="pbtn cur">R$ 105,00</button></td><td><button class="pbtn late">R$ 200,00</button></td></tr>
+              <tr><td>Técnico Nível Médio ou Aposentado – Não Associado</td><td><button class="pbtn">R$ 25,00</button></td><td><button class="pbtn cur">R$ 55,00</button></td><td><button class="pbtn late">R$ 105,00</button></td></tr>
+              <tr><td>Ensino Médio / IC Júnior – Não Associado</td><td><button class="pbtn">R$ 20,00</button></td><td><button class="pbtn cur">R$ 25,00</button></td><td><button class="pbtn late">R$ 50,00</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="insc-foot">
+        <button class="btn-voltar">Voltar</button>
+        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank"><button class="btn-proximo">Próximo</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORGANIZADOR ===== -->
+<section id="organizador" class="green-sec" style="border-top:1px solid rgba(255,255,255,.08)">
+  <div class="sec-inner">
+    <h2>Organizador</h2>
+    <h3>Comissão Organizadora</h3>
+    <div class="org-cat">Presidência</div>
+    <div class="org-name">José Rubens Pirani</div>
+    <div class="org-name">Otávio Luís Marques da Silva</div>
+    <div class="org-cat">Comissão Organizadora</div>
+    <div class="org-name">Carla Poleselli Bruniera</div>
+    <div class="org-name">Cássia Mônica Sakuragui</div>
+    <div class="org-name">Denilson Fernandes Peralta</div>
+    <div class="org-name">Igor Musauer Kessous</div>
+    <div class="org-name">Izabela Gomes Schelb</div>
+    <div class="org-name">Marcus Nadruz</div>
+    <div class="org-name">Odair José de Almeida</div>
+    <div class="org-name">Renato Xavier Araújo Prudência</div>
+    <div class="org-name">Rosângela Simão-Bianchini</div>
+    <div class="org-name">Vinicius Castro Souza</div>
+    <div class="org-name">Zélia Rodrigues de Melo</div>
+    <div class="org-email">jornada.de.botanica.rj.sp@gmail.com</div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-copy">© 2026 Softaliza – Todos os direitos reservados</div>
+  <div class="footer-brand">softaliza</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navlinks').classList.toggle('open');
+}
+document.querySelectorAll('#navlinks a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open'));
+});
+
+function switchType(type, btn){
+  document.querySelectorAll('.prog-type-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-atividades').style.display = type==='atividades'?'block':'none';
+  document.getElementById('tab-cursos').style.display = type==='cursos'?'block':'none';
+}
+
+function switchDay(id, btn){
+  document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.prog-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+
+function toggleArea(el){
+  el.classList.toggle('open');
+  const body = el.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+document.querySelectorAll('.room-chip').forEach(chip=>{
+  chip.addEventListener('click',function(){
+    this.classList.toggle('active');
+  });
+});
+
+// ===== SPEAKER MODAL =====
+const SPEAKERS = {
+  ana_maria: {
+    name: 'Ana Maria Giulietti-Harley',
+    role: 'Professora Aposentada UEFS · Membro Titular da Academia Brasileira de Ciências · Pesquisadora Emérita CNPq',
+    photo: 'img/ana_maria.png',
+    bio: `Possui graduação em História Natural pela Faculdade Frassinetti do Recife (1967), mestrado e doutorado em Ciências Biológicas (Botânica) pela Universidade de São Paulo (1970, 1978). Foi Professora do Departamento de Botânica do IB-USP de 1976 a 1996 (Prof. Titular). Professora da Universidade Estadual de Feira de Santana, Bahia, aposentando em 2008 como Prof. Pleno. De 2014 a 2018 foi Pesquisadora Associada do Instituto Tecnológico Vale em Belém. Bolsista de Pesquisa do CNPq ininterruptamente desde 1977 até 2020 (Pesquisador Sênior). Em 2021 recebeu o título de Pesquisador Emérito do CNPq. Associate Research do Royal Botanic Gardens, Kew, até 2024. Desde 2005 é Membro Titular da Área de Ciências Biológicas da Academia Brasileira de Ciências. Na SBB, foi Vice-Presidente de 2019–2022 e atualmente é 2ª Vice-Presidente (2023–2026). Tem experiência em Sistemática de Angiospermas, atuando principalmente em Eriocaulaceae, Flora da Bahia, Biodiversidade, Campos Rupestres e Semiárido. Orientou cerca de 100 estudantes e publicou 240 trabalhos em revistas nacionais e estrangeiras, 17 livros e 71 capítulos de livros.`
+  },
+  claudia: {
+    name: 'Cláudia Fontana',
+    role: 'Pesquisadora Pós-Doutoranda · Instituto de Pesquisas Ambientais (IPA-SP) · Colaboradora ESALQ/USP',
+    photo: 'img/claudia.png',
+    bio: `Bacharelado em Ciências Biológicas pela UNOESC (2008), mestrado em Engenharia Ambiental pela FURB (2012) e doutorado em Biologia: Diversidade e Manejo da Vida Silvestre pela UNISINOS (2017), com estágio na Universidade de Coimbra, Portugal. Especialista em Gestão de Recursos Naturais (PUC-PR) e Docência no Ensino Superior (SENAC). Realizou pós-doutorado na USP/ESALQ (2020–2024), com período no IANIGLA/CONICET, Argentina. Sua expertise abrange Ecologia de Florestas, Botânica, Restauração de Áreas Degradadas e dendrocronologia. Pesquisa atual: uso de anéis de crescimento e anatomia da madeira para entender como variabilidade climática e fogo afetam plantas lenhosas do Cerrado e da Mata Atlântica, com abordagem multiproxy combinando dendrocronologia, densitometria por raios X e radiocarbono (¹⁴C).`
+  },
+  daniela: {
+    name: 'Daniela Cristina Zappi',
+    role: 'Professora Visitante Titular · UFRB · Taxonomista e Sistemática de Angiospermas',
+    photo: 'img/daniela.png',
+    bio: `Doutora em Ciências Biológicas (Botânica) pela USP (1992), com experiência em Taxonomia e Sistemática de Angiospermas. Trabalhou no Royal Botanic Gardens, Kew (1992–2016) em projetos incluindo Rubiaceae, Cactaceae, Loganiaceae, Flora Neotropical e digitalização de coleções. Durante licença sabática no Gardens by the Bay, Cingapura (2011–2014), foi responsável por projetos de educação e pesquisa sobre plantas tropicais. Participou ativamente do projeto Lista do Brasil (2009–2014) e foi coordenadora-adjunta da Flora do Brasil online (2014–2016). Atuou no Instituto Tecnológico Vale, Belém, com florística e conservação da flora brasileira. Entre 2020 e 2022 foi PVE na Universidade de Brasília. Em 2024 foi contratada pela Universidade Federal do Recôncavo da Bahia (UFRB) como PV Titular, atuando na pós-graduação em Recursos Genéticos Vegetais.`
+  },
+  dora: {
+    name: 'Dora Ann Lange Canhos',
+    role: 'Coordenadora da rede speciesLink · Centro de Referência em Informação Ambiental (CRIA)',
+    photo: 'img/dora.png',
+    bio: `Formada em Engenharia de Alimentos pela Unicamp (1977) e doutora em Política Científica e Tecnológica pelo Instituto de Geociências da Unicamp (2013). Trabalha desde 1985 com a estruturação de sistemas de informação on-line de acesso público sobre biodiversidade. Foi Diretora Associada do CRIA e atualmente coordena a rede speciesLink. Na década de 1990 coordenou o projeto BINbr junto ao Ministério do Meio Ambiente e foi membro do grupo de coordenação do BIOTA-FAPESP. Foi representante do CRIA no Clearing-House Mechanism Informal Advisory Committee da Convenção sobre Diversidade Biológica (2001–2013). Membro do Executive Board do CODATA (2010–2012) e do Advisory Board do GEO BON até 2017. Coordenou a área de Sistema de informação do Instituto Nacional de Ciência e Tecnologia — Herbário Virtual da Flora e dos Fungos (2009–2024).`
+  },
+  fabio: {
+    name: 'Fábio Pinheiro',
+    role: 'Professor Doutor · Departamento de Biologia Vegetal · IB-UNICAMP',
+    photo: 'img/fabio.png',
+    bio: `Graduação em Ciências Biológicas pela USP (2002), mestrado (2005) e doutorado (2010) em Botânica pelo Instituto de Biociências da USP. Atualmente é Professor Doutor do Departamento de Biologia Vegetal do IB-UNICAMP. Trabalha desde 1998 com evolução de plantas neotropicais, utilizando dados moleculares e experimentos ecológicos para entender os mecanismos responsáveis pela manutenção dos elevados níveis de diversidade observados na região Neotropical. Seus trabalhos integram diferentes disciplinas, com foco em biologia reprodutiva, polinização, hibridação, filogeografia e especiação de plantas.`
+  },
+  gilberto: {
+    name: 'Gilberto Barbante Kerbauy',
+    role: 'Professor Titular · Departamento de Botânica · IB-USP · Pesquisador CNPq',
+    photo: 'img/gilberto.png',
+    bio: `Graduado (1970), mestre (1977) e doutor (1981) pela Universidade de São Paulo, com pós-doutorado pela University of Nijmegen, Holanda (1991). Exerce desde 1998 o cargo de Professor Titular junto ao Departamento de Botânica do IB-USP, onde desenvolve atividades de pesquisa, ensino e extensão na área de Fisiologia do Desenvolvimento Vegetal. Seu foco principal é a ação hormonal endógena e a transdução de sinais hormonais-ambientais relacionados aos processos de competência, indução, divisão e diferenciação de células meristemáticas e células-tronco caulinares e radiculares, utilizando plantas-modelo de orquídeas. É pesquisador do CNPq.`
+  },
+  jose: {
+    name: 'José Rubens Pirani',
+    role: 'Professor Titular · Universidade de São Paulo · Presidente da IV Jornada Rio-SP',
+    photo: 'img/jose.png',
+    bio: `Graduação em Ciências Biológicas pela USP (1979), mestrado (1982) e doutorado (1989) em Ciências Biológicas (Botânica) pela USP. Livre-docência em 1999, tornando-se Professor Associado e posteriormente Professor Titular da USP. Tem experiência na área de Botânica, com ênfase em Taxonomia Vegetal, atuando em duas linhas de pesquisa: (1) florística e fitogeografia de vegetação de altitude com foco nas serras de Minas Gerais e Bahia; e (2) sistemática, filogenia, evolução estrutural, diversificação e biogeografia da Ordem Sapindales, com ênfase em Rutaceae e Simaroubaceae. É um dos presidentes da IV Jornada Rio-São Paulo de Botânica.`
+  }
+};
+
+function openSpeaker(key){
+  const s = SPEAKERS[key];
+  if(!s) return;
+  document.getElementById('spkModalPhoto').src = s.photo;
+  document.getElementById('spkModalPhoto').alt = s.name;
+  document.getElementById('spkModalName').textContent = s.name;
+  document.getElementById('spkModalRole').textContent = s.role;
+  document.getElementById('spkModalBody').textContent = s.bio;
+  document.getElementById('spkModalBg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpeaker(){
+  document.getElementById('spkModalBg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeSpeakerIfBg(e){
+  if(e.target === document.getElementById('spkModalBg')) closeSpeaker();
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeSpeaker(); });
+
+// ===== CURSOS =====
+function toggleCurso(id){
+  const b = document.getElementById('cb-'+id);
+  const btn = document.getElementById('ct-'+id);
+  if(b.classList.toggle('open')){ btn.textContent='Esconder'; }
+  else { btn.textContent='Ver tudo'; }
+}
+
+const CURSOS = [
+  {id:1,title:'Reconhecimento prático de inflorescências',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Juliana Hanna Leite El Ottra (EACH-USP)',desc:'Mini-curso destinado a apresentar aspectos teóricos e práticos para o estudo da arquitetura de inflorescências.'},
+  {id:2,title:'Análises fitogeográficas no ambiente computacional R',tipo:'Teórico-Prático',vagas:30,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 23:59 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Yago Barros-Souza, MSc. Rafael Fernandes Barduzzi, MSc. Monique Maianne (UFSCar)',desc:'Integração de dados de ocorrência, filogenéticos e abióticos para investigar padrões fitogeográficos neotropicais.'},
+  {id:3,title:'Montagem de exsicata com abordagem artística',tipo:'Teórico-Prático',vagas:30,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'MSc. Viviane Yuri Jono (ESALQ-USP), Art. Plást. Eliane Cortazzo de Lemos e Blga. Isabela Akemi Borges (IB-USP)',desc:'Aprenda métodos de conservação de plantas em herbários e realize a montagem de exsicatas, integrando rigor científico a uma apresentação visual cuidadosa e harmoniosa.'},
+  {id:4,title:'Formas de vida das plantas - parasitas, epífitas, lianas e esquisitices',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Gregório Ceccantini, Blgo. Mário Henrique Principessa, Blga. Queren Maciel, MSc. Vitor Sibinelli (IB-USP)',desc:'Oficina sobre o conceito das formas de vida de Raunkiaer, com ênfase em parasitas, epífitas, lianas e tipos heteromixotróficos. Inclui visita aos jardins do IB.'},
+  {id:5,title:'Encáustica botânica',tipo:'Teórico-Prático',vagas:30,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Arq. Christian Bardez Castro (IB-USP) e MSc. Katia Speck (ECA-USP)',desc:'Demonstração prática da técnica artística da encáustica para preservação de material vegetal. Confecção de peças artesanais com folhas e flores dessecadas em sílica gel.'},
+  {id:6,title:'O poder do biólogo no paisagismo: transformando biomas em paisagens',tipo:'Teórico',vagas:50,valor:'R$ 10',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'MSc. Gisele de Oliveira Silva Cobra (Kaapora Paisagismo)',desc:'Minicurso para biólogos interessados em paisagismo, explorando flora nativa e processos naturais como fundamento para o projeto paisagístico sustentável.'},
+  {id:7,title:'Palinologia na prática: Aplicações ambientais da morfologia esporo-polínica',tipo:'Teórico-Prático',vagas:25,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Cynthia Fernandes Pinto da Luz, MSc. Aline Lemos de Moraes, MSc. Maria do Socorro Grasiele Gomes (IPA)',desc:'Morfologia polínica e de esporos de briófitas, demonstrando como essas estruturas são utilizadas na caracterização de tipos esporo-polínicos em mel e solos.'},
+  {id:8,title:'Plantas Aquáticas e Palustres – Composição para cultivo em bacias',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Arq. Christian Bardez Castro (IB-USP)',desc:'Visitação ao jardim com explanação sobre plantas aquáticas: anfíbias, emergentes, flutuantes livres e fixas, submersas e epífitas.'},
+  {id:9,title:'Palinologia aplicada aos estudos atmosféricos, um enfoque na biodiversidade',tipo:'Teórico',vagas:50,valor:'R$ 10',dia:'01 de Julho',insc:'20/03/26 23:59 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Claudia Barbieri Mendonça, Dr. Luiz Antonio Rodrigues (MN/UFRJ), Dra. Cynthia Fernandes Pinto da Luz (IPA) e Dr. Eduardo Gasparino (UNESP)',desc:'Principais métodos aplicados aos estudos dos grãos de pólen na atmosfera e uso da morfologia polínica como indicador de qualidade do ar e biodiversidade.'},
+  {id:10,title:'Anéis de crescimento na madeira e a idade das árvores',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Gregório Ceccantini, Blgo. João Gabriel Sakayan, Blgo. Teiva Shettert (IB-USP)',desc:'Oficina sobre formação de anéis de crescimento anuais, coleta com trado de incremento, preparação e contagem de idade. Os participantes descobrirão a idade de amostras reais.'},
+  {id:11,title:'Identificação de Plantas Vasculares',tipo:'Teórico-Prático',vagas:25,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Otávio Luis Marques da Silva, Dr. Igor Musauer Kessous (IB-USP) e Dra. Inês Cordeiro (IPA)',desc:'Oficina prática com chaves de identificação de materiais herborizados e frescos de plantas comuns da Mata Atlântica.'},
+  {id:12,title:'Curiosidades da madeira em nosso cotidiano',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Veronica Angyalossy, Blgo. Lui Agostinho Teixeira & Blgo. Ricardo Hideaki (IB-USP)',desc:'Tipos estruturais da madeira, anéis de crescimento, condução hídrica e curiosidades como a importância do pau-brasil na colonização do Brasil e madeira usada em perfumes e papel.'},
+  {id:13,title:'Cromossomos: quem são e o que contam?',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Ana Paula de Moraes, Blga. Irene de Fátima Vieira de Moraes (UNESP)',desc:'Minicurso prático sobre como obter uma preparação cromossômica de material vegetal, seguido de apresentação teórica sobre as aplicabilidades da citogenética vegetal.'},
+  {id:14,title:'Da matriz à muda: coleta de sementes nativas e produção de mudas para a arborização urbana',tipo:'Teórico-Prático',vagas:15,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 23:59 a 01/07/26 23:59',ch:'04:00:00',inst:'Blgo. Guilherme Brandão do Amaral e equipe de estagiários do VHB (Prefeitura de São Paulo)',desc:'Etapas técnicas da coleta de sementes e frutos nativos, identificação de matrizes, critérios de seleção e boas práticas para garantir diversidade genética e qualidade das mudas.'},
+  {id:15,title:'Elaboração de mapas de distribuição usando Q-GIS',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 23:59 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Ingrid Koch, Blga. Daniela Martins Alves e Blgo. Giovani C. Andrella (UNICAMP)',desc:'Oficina prática de elaboração de mapas de distribuição de espécies usando o QGIS (Quantum Geographic Information System), de código aberto e gratuito.'},
+  {id:16,title:'Ensinando Botânica de forma lúdica',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Déborah Yara A C dos Santos & Dra. Fungyi Chow (IB-USP)',desc:'Oficina de fabricação de papel a partir de fibras não lenhosas e aplicação da técnica de marmorização.'},
+  {id:17,title:'Anatomia Vegetal em Perspectiva: Resgates Conceituais e Novas Interpretações',tipo:'Teórico-Prático',vagas:15,valor:'R$ 20',dia:'01 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Gladys Flavia de Albuquerque Melo de Pinna (IB-USP)',desc:'Revisão de conceitos fundamentais da anatomia vegetal, relacionando conteúdo clássico com interpretações mais recentes. Discussões bibliográficas e observações histológicas.'},
+  {id:18,title:'Identificação de Araceae da Mata Atlântica',tipo:'Teórico-Prático',vagas:15,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Blga. Carolina Urman Vieira, Blgo. Elmar Hentz Junior e Dr. Marcos de Freitas Mortara (ENBT / Jardim Botânico do Rio de Janeiro)',desc:'Diversidade da família Araceae com foco nos gêneros e espécies nativos na Mata Atlântica. Atividades práticas com material herborizado e vivo, e discussões sobre conservação.'},
+  {id:19,title:'Técnicas de herbários para criptógamas: Algas, Fungos e Briófitas',tipo:'Teórico-Prático',vagas:15,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Denison F. Peralta, Dra. Adriana Gugliotta & Dra. Andréa Tucci (Instituto de Pesquisas Ambientais)',desc:'Apresentação da Coleção de Criptógamos Herbário SP; técnicas de coleta e preservação de algas, cianobactérias, briófitas e macrofungos. Realizado no IPA, Prédio 4 – térreo.'},
+  {id:20,title:'Da nutrição à fotossíntese: como as bromélias epífitas sobrevivem e contribuem com a diversidade para além de seus tanques',tipo:'Teórico',vagas:50,valor:'R$ 10',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'MSc. Ítalo V. C. Santos, Dra. Helenice Mercies (IB-USP) e Dr. Tháles A. C. Pereira (UNICAMP)',desc:'Fisiologia e ecologia de bromélias epífitas com tanque: tipos de fotossíntese (C3 e CAM), obtenção de nutrientes e importância para a diversidade de plantas e microbiota do solo.'},
+  {id:21,title:'Taxonomia e Evolução de Bromélias',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Igor Musauer Kessous (IB-USP)',desc:'Aspectos morfológicos, taxonômicos e evolutivos da família Bromeliaceae, com ênfase nas espécies brasileiras. Na parte prática, coleta e prensagem de bromélias no jardim do herbário.'},
+  {id:22,title:'As plantas e os produtos da colmeia: mel, pólen e própolis',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'02 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Antonio Salatino, Dra. Maria Luíza F. Salatino & MSc. Leonardo Regnier (IB-USP)',desc:'Panorama sobre as relações entre plantas e abelhas africanizadas, envolvendo substâncias obtidas de plantas com atividades funcionais e medicinais.'},
+  {id:23,title:'Dinâmica dos Óleos Essenciais em Plantas Brasileiras: Extração, Atividades Biológicas e Cenários Evolutivos',tipo:'Teórico',vagas:50,valor:'R$ 10',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dr. Davyson de Lima Moreira (Jardim Botânico do Rio de Janeiro)',desc:'Técnicas modernas de extração e caracterização de óleos essenciais, atividades biológicas, métricas de quimiodiversidade e quimiofenética. Integra fundamentos químicos, ecológicos e evolutivos.'},
+  {id:24,title:'A Botânica é POP: popularização do conhecimento científico por meio de experiências sensoriais e estéticas',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'Dra. Joicelene Paz, Dra. Karinne Valdemarin & MSc. Viviane Jono (ESALQ-USP)',desc:'Botânica como linguagem visual e sensorial. Produção de objetos autorais (marcadores de página, cartões botânicos, quadros) a partir de fragmentos vegetais herborizados, aproximando ciência e cotidiano.'},
+  {id:25,title:'Terrários: montagem e possibilidades didáticas',tipo:'Teórico-Prático',vagas:20,valor:'R$ 20',dia:'03 de Julho',insc:'20/03/26 00:00 a 01/07/26 23:59',ch:'04:00:00',inst:'MSc. Elen Cristina Faht, Dra. Fabiana Curtopassi Pioker-Hara, Dra. Rosely Aparecida Liguori Imbernon (EACH-USP)',desc:'Explanação sobre funcionamento, montagem e possibilidades de uso dos terrários. Atividade prática de montagem de terrário.'}
+];
+
+function renderCursos(){
+  const container = document.getElementById('cursos-container');
+  if(!container) return;
+  container.innerHTML = CURSOS.map(c=>`
+    <div class="curso-card">
+      <h4>${c.title}</h4>
+      <div class="curso-meta">${c.tipo} | ${c.vagas} vagas | ${c.valor}</div>
+      <div class="curso-date">${c.dia}</div>
+      <div class="curso-instructors">${c.inst}</div>
+      <button class="toggle-curso" id="ct-${c.id}" onclick="toggleCurso(${c.id})">Ver tudo</button>
+      <div class="curso-body" id="cb-${c.id}">
+        <p style="margin-bottom:.4rem">${c.desc}</p>
+        <div class="curso-info">Período de inscrições: ${c.insc}.</div>
+        <div class="curso-info">Carga horária: ${c.ch}</div>
+        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-curso" style="display:inline-block;margin-top:.5rem">Ver detalhes do curso</a>
+      </div>
+    </div>
+  `).join('');
+}
+renderCursos();
+</script>
+</body>
+</html>
