@@ -142,25 +142,25 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
     </a>
   </div>
   <ul class="nav-links" id="navlinks">
-    <li><a href="index.html#sobre">Sobre</a></li>
-    <li><a href="index.html#inscricoes">Inscrições</a></li>
-    <li><a href="index.html#programacao">Programação</a></li>
-    <li><a href="submissoes.html" class="active">Submissões</a></li>
-    <li><a href="index.html#local">Local do Evento</a></li>
+    <li><a href="index.html#sobre" data-i18n="nav-sobre">Sobre</a></li>
+    <li><a href="index.html#inscricoes" data-i18n="nav-inscricoes">Inscrições</a></li>
+    <li><a href="index.html#programacao" data-i18n="nav-programacao">Programação</a></li>
+    <li><a href="submissoes.html" class="active" data-i18n="nav-submissoes">Submissões</a></li>
+    <li><a href="index.html#local" data-i18n="nav-local">Local do Evento</a></li>
     <li>
       <div class="idioma-wrap" id="idiomaWrap">
         <span class="nav-idioma" onclick="toggleIdioma()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-          Idioma ▾
+          <span data-i18n="nav-idioma">Idioma ▾</span>
         </span>
         <div class="idioma-dropdown">
-          <a class="idioma-option" href="#"><span class="idioma-flag">🇧🇷</span> Português</a>
-          <a class="idioma-option" href="#"><span class="idioma-flag">🇺🇸</span> Inglês</a>
-          <a class="idioma-option" href="#"><span class="idioma-flag">🇪🇸</span> Espanhol</a>
+          <a class="idioma-option" href="#" data-lang="pt" onclick="setLang('pt');return false;"><span class="idioma-flag">🇧🇷</span> Português</a>
+          <a class="idioma-option" href="#" data-lang="en" onclick="setLang('en');return false;"><span class="idioma-flag">🇺🇸</span> Inglês</a>
+          <a class="idioma-option" href="#" data-lang="es" onclick="setLang('es');return false;"><span class="idioma-flag">🇪🇸</span> Espanhol</a>
         </div>
       </div>
     </li>
-    <li><a href="index.html#inscricoes" class="nav-btn">Área restrita</a></li>
+    <li><a href="index.html#inscricoes" class="nav-btn" data-i18n="nav-area">Área restrita</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -170,9 +170,9 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
 <!-- HERO -->
 <div class="sub-hero">
   <div class="sub-hero-inner">
-    <div class="sub-hero-tag">IV Jornada Rio-São Paulo de Botânica</div>
-    <h1 class="sub-hero-title">Submissões</h1>
-    <div class="sub-hero-sub">Chamada para trabalhos</div>
+    <div class="sub-hero-tag" data-i18n="sub-hero-tag">IV Jornada Rio-São Paulo de Botânica</div>
+    <h1 class="sub-hero-title" data-i18n="sub-hero-title">Submissões</h1>
+    <div class="sub-hero-sub" data-i18n="sub-hero-sub">Chamada para trabalhos</div>
   </div>
 </div>
 
@@ -182,87 +182,87 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
 
     <!-- SUBMISSÃO DE TRABALHOS -->
     <div class="sub-card">
-      <h2>Submissão de Trabalhos</h2>
-      <p>Convidamos a todos os participantes do evento a submeterem seus resumos para apresentação na Sessão de Painéis, como uma excelente oportunidade para compartilhar seus trabalhos, trocar experiências e enriquecer as discussões científicas. Para isso, cada participante inscrito tem direito a submeter um resumo para apresentação na forma de painel.</p>
-      <p>Serão disponibilizadas regras para submissão no site do evento (Anexo I), junto aos modelos de resumos e de pôster (Anexos II e III, respectivamente). Os trabalhos poderão ser alocados em uma das áreas temáticas especificadas abaixo:</p>
+      <h2 data-i18n="sub-card1-title">Submissão de Trabalhos</h2>
+      <p data-i18n-html="sub-card1-p1">Convidamos a todos os participantes do evento a submeterem seus resumos para apresentação na Sessão de Painéis, como uma excelente oportunidade para compartilhar seus trabalhos, trocar experiências e enriquecer as discussões científicas. Para isso, cada participante inscrito tem direito a submeter um resumo para apresentação na forma de painel.</p>
+      <p data-i18n-html="sub-card1-p2">Serão disponibilizadas regras para submissão no site do evento (Anexo I), junto aos modelos de resumos e de pôster (Anexos II e III, respectivamente). Os trabalhos poderão ser alocados em uma das áreas temáticas especificadas abaixo:</p>
       <ul>
-        <li>Biologia Reprodutiva e Palinologia</li>
-        <li>Bioquímica, Fitoquímica e Quimiossistemática</li>
-        <li>Botânica Estrutural</li>
-        <li>Coleções Biológicas</li>
-        <li>Ecologia e Ecofisiologia Vegetal</li>
-        <li>Ensino de Botânica e Atividades Extensionistas</li>
-        <li>Etnobotânica e Botânica Econômica</li>
-        <li>Fisiologia e Biotecnologia Vegetal</li>
-        <li>Genética e Biologia Molecular</li>
-        <li>Sistemática e Taxonomia de Angiospermas e Gimnospermas</li>
-        <li>Sistemática e Taxonomia de Briófitas, Algas e Fungos</li>
-        <li>Sistemática e Taxonomia de Licófitas e Samambaias</li>
+        <li data-i18n="area-1">Biologia Reprodutiva e Palinologia</li>
+        <li data-i18n="area-2">Bioquímica, Fitoquímica e Quimiossistemática</li>
+        <li data-i18n="area-3">Botânica Estrutural</li>
+        <li data-i18n="area-4">Coleções Biológicas</li>
+        <li data-i18n="area-5">Ecologia e Ecofisiologia Vegetal</li>
+        <li data-i18n="area-6">Ensino de Botânica e Atividades Extensionistas</li>
+        <li data-i18n="area-7">Etnobotânica e Botânica Econômica</li>
+        <li data-i18n="area-8">Fisiologia e Biotecnologia Vegetal</li>
+        <li data-i18n="area-9">Genética e Biologia Molecular</li>
+        <li data-i18n="area-10">Sistemática e Taxonomia de Angiospermas e Gimnospermas</li>
+        <li data-i18n="area-11">Sistemática e Taxonomia de Briófitas, Algas e Fungos</li>
+        <li data-i18n="area-12">Sistemática e Taxonomia de Licófitas e Samambaias</li>
       </ul>
-      <p>A apresentação presencial dos trabalhos na Sessão de Painéis será realizada em dois dias: <strong>02 e 03 de julho</strong>, das <strong>13h30 às 14h30</strong>. As apresentações sempre acontecerão no hall do terceiro andar do Prédio da Administração do Instituto de Biociências, em frente ao Auditório Principal, e estarão organizadas por áreas temáticas. Os painéis poderão ser afixados a partir das 08h30 de cada dia.</p>
-      <p>Firmamos uma parceria com a <strong>NRK Soluções Gráficas</strong> (<a href="mailto:xeroxicbusp@gmail.com" style="color:#a8dfc9">xeroxicbusp@gmail.com</a>) para impressão e entrega diretamente no Instituto de Biociências de pôsteres de inscritos que desejem utilizar o serviço para maior comodidade. Por meio desta parceria, a impressão de pôsteres nas medidas recomendadas (90×100 cm) pode ser realizada nas opções de (1) papel sulfite 120g <strong>(R$ 50,00)</strong> ou (2) em lona com acabamento <strong>(R$ 85,00)</strong>.</p>
+      <p data-i18n-html="sub-card1-p3">A apresentação presencial dos trabalhos na Sessão de Painéis será realizada em dois dias: <strong>02 e 03 de julho</strong>, das <strong>13h30 às 14h30</strong>. As apresentações sempre acontecerão no hall do terceiro andar do Prédio da Administração do Instituto de Biociências, em frente ao Auditório Principal, e estarão organizadas por áreas temáticas. Os painéis poderão ser afixados a partir das 08h30 de cada dia.</p>
+      <p data-i18n-html="sub-card1-p4">Firmamos uma parceria com a <strong>NRK Soluções Gráficas</strong> (<a href="mailto:xeroxicbusp@gmail.com" style="color:#a8dfc9">xeroxicbusp@gmail.com</a>) para impressão e entrega diretamente no Instituto de Biociências de pôsteres de inscritos que desejem utilizar o serviço para maior comodidade. Por meio desta parceria, a impressão de pôsteres nas medidas recomendadas (90×100 cm) pode ser realizada nas opções de (1) papel sulfite 120g <strong>(R$ 50,00)</strong> ou (2) em lona com acabamento <strong>(R$ 85,00)</strong>.</p>
       <div class="template-links">
         <a href="#" class="btn-template">
           <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-          Template Painel
+          <span data-i18n="sub-tpl-panel">Template Painel</span>
         </a>
         <a href="#" class="btn-template">
           <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-          Template Resumo
+          <span data-i18n="sub-tpl-resumo">Template Resumo</span>
         </a>
         <a href="#" class="btn-template">
           <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
-          Normas para Apresentação de Trabalhos
+          <span data-i18n="sub-tpl-normas">Normas para Apresentação de Trabalhos</span>
         </a>
       </div>
     </div>
 
     <!-- NORMAS -->
     <div class="sub-card">
-      <h2>Normas para Submissão</h2>
-      <p>A submissão de resumos para a IV Jornada Rio-São Paulo de Botânica deverá ser feita pelo site do evento, até a data limite de <strong>30 de abril de 2026</strong>.</p>
+      <h2 data-i18n="sub-card2-title">Normas para Submissão</h2>
+      <p data-i18n-html="sub-card2-p1">A submissão de resumos para a IV Jornada Rio-São Paulo de Botânica deverá ser feita pelo site do evento, até a data limite de <strong>30 de abril de 2026</strong>.</p>
       <ul>
-        <li>O resumo deverá ser submetido usando o formulário de submissão do site do evento;</li>
-        <li>Junto ao formulário, o resumo deverá ser submetido seguindo o modelo disponibilizado no site do evento, em formato <strong>.doc ou .docx</strong>;</li>
-        <li>Cada inscrição no evento concederá o direito à submissão de <strong>um resumo</strong>;</li>
-        <li>Cada resumo tem um limite de <strong>15 autores</strong>;</li>
-        <li>Apenas resumos de trabalhos originais serão aceitos;</li>
-        <li>Os resumos devem ser redigidos em <strong>português</strong>;</li>
-        <li>A qualidade do texto, que abrange gramática, ortografia além do conteúdo, é de responsabilidade do(s) autor(es). Este será um critério utilizado pela Comissão Avaliadora de Resumos para aceitar ou rejeitar o resumo;</li>
-        <li>Todos os resumos aceitos serão publicados nos anais do evento;</li>
-        <li>O resumo deve ser classificado em uma das áreas temáticas listadas acima.</li>
+        <li data-i18n-html="sub-card2-li1">O resumo deverá ser submetido usando o formulário de submissão do site do evento;</li>
+        <li data-i18n-html="sub-card2-li2">Junto ao formulário, o resumo deverá ser submetido seguindo o modelo disponibilizado no site do evento, em formato <strong>.doc ou .docx</strong>;</li>
+        <li data-i18n-html="sub-card2-li3">Cada inscrição no evento concederá o direito à submissão de <strong>um resumo</strong>;</li>
+        <li data-i18n-html="sub-card2-li4">Cada resumo tem um limite de <strong>15 autores</strong>;</li>
+        <li data-i18n="sub-card2-li5">Apenas resumos de trabalhos originais serão aceitos;</li>
+        <li data-i18n-html="sub-card2-li6">Os resumos devem ser redigidos em <strong>português</strong>;</li>
+        <li data-i18n="sub-card2-li7">A qualidade do texto, que abrange gramática, ortografia além do conteúdo, é de responsabilidade do(s) autor(es). Este será um critério utilizado pela Comissão Avaliadora de Resumos para aceitar ou rejeitar o resumo;</li>
+        <li data-i18n="sub-card2-li8">Todos os resumos aceitos serão publicados nos anais do evento;</li>
+        <li data-i18n="sub-card2-li9">O resumo deve ser classificado em uma das áreas temáticas listadas acima.</li>
       </ul>
 
       <hr class="sub-divider"/>
 
-      <p>A apresentação dos trabalhos selecionados ocorrerá de forma presencial, em formato de painel, nos dias <strong>02 e 03 de julho de 2026</strong>, em duas sessões realizadas no período das <strong>13h30 às 14h30</strong>.</p>
+      <p data-i18n-html="sub-card2-p2">A apresentação dos trabalhos selecionados ocorrerá de forma presencial, em formato de painel, nos dias <strong>02 e 03 de julho de 2026</strong>, em duas sessões realizadas no período das <strong>13h30 às 14h30</strong>.</p>
       <ul>
-        <li>O painel deverá ser preparado respeitando as medidas máximas de <strong>90×100 cm</strong> (largura × altura);</li>
-        <li>Um modelo é disponibilizado no site e seu uso não é obrigatório;</li>
-        <li>No painel, devem constar obrigatoriamente as seguintes informações: título do trabalho, nome dos autores, instituições de afiliação de cada autor, ao menos um e-mail de contato. Recomenda-se a apresentação geral do trabalho, seguindo a divisão básica em Introdução, Objetivos, Métodos, Resultados &amp; Discussão, Conclusões e Referências Bibliográficas.</li>
+        <li data-i18n-html="sub-card2-li10">O painel deverá ser preparado respeitando as medidas máximas de <strong>90×100 cm</strong> (largura × altura);</li>
+        <li data-i18n="sub-card2-li11">Um modelo é disponibilizado no site e seu uso não é obrigatório;</li>
+        <li data-i18n-html="sub-card2-li12">No painel, devem constar obrigatoriamente as seguintes informações: título do trabalho, nome dos autores, instituições de afiliação de cada autor, ao menos um e-mail de contato. Recomenda-se a apresentação geral do trabalho, seguindo a divisão básica em Introdução, Objetivos, Métodos, Resultados &amp; Discussão, Conclusões e Referências Bibliográficas.</li>
       </ul>
     </div>
 
     <!-- CTA SUBMISSÃO -->
     <div class="sub-cta-card">
-      <h3>Faça a sua submissão</h3>
-      <p>Clique no botão abaixo e faça a sua submissão</p>
+      <h3 data-i18n="sub-page-cta-title">Faça a sua submissão</h3>
+      <p data-i18n="sub-page-cta-p">Clique no botão abaixo e faça a sua submissão</p>
       <div class="sub-btns">
-        <a href="template.docx" download class="btn-outline">Template de submissão</a>
-        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-solid">Faça sua submissão</a>
+        <a href="template.docx" download class="btn-outline" data-i18n="sub-tpl-btn">Template de submissão</a>
+        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-solid" data-i18n="sub-submit-btn">Faça sua submissão</a>
       </div>
     </div>
 
     <!-- DATAS -->
-    <h2 class="timeline-title">Datas importantes</h2>
+    <h2 class="timeline-title" data-i18n="timeline-title">Datas importantes</h2>
     <div class="timeline">
       <div class="tl-row">
         <div class="tl-icon">
           <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
         </div>
         <div class="tl-card">
-          <strong>De 01/04/2026 até 30/04/2026</strong>
-          <span>Período de submissões</span>
+          <strong data-i18n="tl-1-strong">De 01/04/2026 até 30/04/2026</strong>
+          <span data-i18n="tl-1-span">Período de submissões</span>
         </div>
       </div>
       <div class="tl-row">
@@ -270,8 +270,8 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
           <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
         </div>
         <div class="tl-card">
-          <strong>De 15/04/2026 até 31/05/2026</strong>
-          <span>Período de avaliações</span>
+          <strong data-i18n="tl-2-strong">De 15/04/2026 até 31/05/2026</strong>
+          <span data-i18n="tl-2-span">Período de avaliações</span>
         </div>
       </div>
       <div class="tl-row">
@@ -279,8 +279,8 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
         </div>
         <div class="tl-card">
-          <strong>A partir de 01/06/2026</strong>
-          <span>Liberação de aceites</span>
+          <strong data-i18n="tl-3-strong">A partir de 01/06/2026</strong>
+          <span data-i18n="tl-3-span">Liberação de aceites</span>
         </div>
       </div>
       <div class="tl-row">
@@ -288,8 +288,8 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
           <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
         </div>
         <div class="tl-card">
-          <strong>05/06/2026</strong>
-          <span>Divulgação de resultados</span>
+          <strong data-i18n="tl-4-strong">05/06/2026</strong>
+          <span data-i18n="tl-4-span">Divulgação de resultados</span>
         </div>
       </div>
     </div>
@@ -297,43 +297,43 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
     <!-- ÁREAS TEMÁTICAS -->
     <div style="max-width:820px;margin:0 auto 2.5rem">
       <div class="areas-title-wrap">
-        <div class="areas-title-badge">Categorias de submissões · Áreas temáticas</div>
+        <div class="areas-title-badge" data-i18n="areas-cat-badge">Categorias de submissões · Áreas temáticas</div>
       </div>
       <div class="areas-list">
-        <div class="area-item" onclick="toggleArea(this)">Biologia Reprodutiva e Palinologia <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Bioquímica, Fitoquímica e Quimiossistemática <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Botânica Estrutural <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Coleções Biológicas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Ecologia e Ecofisiologia Vegetal <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Ensino de Botânica e Atividades Extensionistas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Etnobotânica e Botânica Econômica <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Fisiologia e Biotecnologia Vegetal <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Genética e Biologia Molecular <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Angiospermas e Gimnospermas <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Briófitas, Algas e Fungos <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
-        <div class="area-item" onclick="toggleArea(this)">Sistemática e Taxonomia de Licófitas e Samambaias <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-        <div class="area-body"><strong>Categoria</strong><br/>• Sessão de Painéis</div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-1">Biologia Reprodutiva e Palinologia</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-2">Bioquímica, Fitoquímica e Quimiossistemática</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-3">Botânica Estrutural</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-4">Coleções Biológicas</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-5">Ecologia e Ecofisiologia Vegetal</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-6">Ensino de Botânica e Atividades Extensionistas</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-7">Etnobotânica e Botânica Econômica</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-8">Fisiologia e Biotecnologia Vegetal</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-9">Genética e Biologia Molecular</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-10">Sistemática e Taxonomia de Angiospermas e Gimnospermas</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-11">Sistemática e Taxonomia de Briófitas, Algas e Fungos</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
+        <div class="area-item" onclick="toggleArea(this)"><span data-i18n="area-12">Sistemática e Taxonomia de Licófitas e Samambaias</span> <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="area-body"><strong data-i18n="area-cat">Categoria</strong><br/>• <span data-i18n="area-session">Sessão de Painéis</span></div>
       </div>
     </div>
 
     <!-- CTA FINAL -->
     <div class="sub-cta-card">
-      <h3>Faça a sua submissão</h3>
-      <p>Clique no botão abaixo e faça a sua submissão</p>
+      <h3 data-i18n="sub-page-cta-title">Faça a sua submissão</h3>
+      <p data-i18n="sub-page-cta-p">Clique no botão abaixo e faça a sua submissão</p>
       <div class="sub-btns">
-        <a href="template.docx" download class="btn-outline">Template de submissão</a>
-        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-solid">Faça sua submissão</a>
+        <a href="template.docx" download class="btn-outline" data-i18n="sub-tpl-btn">Template de submissão</a>
+        <a href="https://app.ciente.studio/iv-jornadariosp/subscription" target="_blank" class="btn-solid" data-i18n="sub-submit-btn">Faça sua submissão</a>
       </div>
     </div>
 
@@ -342,7 +342,7 @@ footer{background:var(--yellow-nav);padding:.85rem 2rem;display:flex;justify-con
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 Softaliza – Todos os direitos reservados</div>
+  <div class="footer-copy" data-i18n="footer-copy">© 2026 Softaliza – Todos os direitos reservados</div>
   <div class="footer-brand">softaliza</div>
 </footer>
 
@@ -365,5 +365,7 @@ function toggleArea(el){
   el.nextElementSibling.classList.toggle('open');
 }
 </script>
+<script src="js/translations.js"></script>
+<script>initLang();</script>
 </body>
 </html>
